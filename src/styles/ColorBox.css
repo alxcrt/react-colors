@@ -1,0 +1,121 @@
+.color-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  position: relative;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+
+.color-box.show {
+  pointer-events: none;
+}
+
+.color-box-copy {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.copy-btn {
+  background: rgba(255, 255, 255, 0);
+  font-size: 2rem;
+  border: 0.2rem rgba(255, 255, 255, 0.2) solid;
+  padding: 0.5rem 1rem;
+  /* box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); */
+  border-radius: 0.5rem;
+  /* border: 1px solid rgba(0, 0, 0, 0.1); */
+  /* font-weight: 700; */
+  opacity: 0;
+  cursor: pointer;
+  color: white;
+}
+
+.color-box:hover .copy-btn {
+  opacity: 1;
+  transition: 0.5s;
+}
+
+.color-box-content {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  /* margin: 0.5rem; */
+}
+
+.color-name {
+  display: flex;
+  align-items: center;
+  padding-left: 0.5rem;
+  padding-bottom: 0.25rem;
+  text-transform: uppercase;
+  color: white;
+}
+
+.more-btn {
+  background: rgba(255, 255, 255, 0.3);
+  /* padding: 1rem; */
+  /* font-size: 1.2rem; */
+  padding: 0.5rem 1rem;
+  color: white;
+  text-transform: uppercase;
+  border: 0;
+}
+
+.copy-overlay {
+  opacity: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  /* transition: transform 0.6s ease-in-out; */
+  position: absolute;
+  transform: scale(0.1);
+}
+
+.copy-overlay.show {
+  z-index: 10;
+  opacity: 1;
+  transform: scale(50);
+  /* overflow: hidden; */
+  /* height: auto; */
+}
+
+.copy-msg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  transform: scale(0.1);
+  opacity: 0;
+  z-index: -1;
+  color: white;
+  text-transform: uppercase;
+  /* background: rgba(255, 255, 255, 1); */
+}
+
+.copy-msg.show {
+  transform: scale(1);
+  opacity: 1;
+  z-index: 11;
+}
+
+.copy-msg.show h1 {
+  text-align: center;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin-bottom: 0;
+  padding: 1rem;
+}
+
+.copy-msg.show p {
+  font-size: 2rem;
+  font-weight: 400;
+}
